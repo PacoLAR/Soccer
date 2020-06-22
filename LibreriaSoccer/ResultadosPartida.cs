@@ -1,6 +1,6 @@
 namespace LibreriaSoccer{
     public enum ResultadosPartida{
-        LocalWon,
+        LocalWon ,
         VisitantWon,
         Draw,
     }

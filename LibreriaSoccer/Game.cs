@@ -2,7 +2,7 @@ using System;
 
 namespace LibreriaSoccer{
     public class Game{
-        public DateTime Date{get;set;}
+        public DateTime fecha{get;set;}
         public SoccerTeam Visitant{get;set;}
         public SoccerTeam Local{get;set;}
 
@@ -10,5 +10,12 @@ namespace LibreriaSoccer{
         public ResultadosPartida FullTimeResult{get;set;}
         
         
+        public override string ToString(){
+            return $"Equipo local: {Local.Equipo} Equipo Visitante: {Visitant.Equipo} Resultado: {FullTimeResult} Fecha: {fecha}";
+
+        }
+
     }
+
+    
 }

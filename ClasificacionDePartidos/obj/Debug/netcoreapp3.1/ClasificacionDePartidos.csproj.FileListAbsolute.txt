@@ -1,0 +1,16 @@
+C:\Users\Bemol\Documents\alcala\proyectosoccer\ClasificacionDePartidos\bin\Debug\netcoreapp3.1\ClasificacionDePartidos.exe
+C:\Users\Bemol\Documents\alcala\proyectosoccer\ClasificacionDePartidos\bin\Debug\netcoreapp3.1\ClasificacionDePartidos.deps.json
+C:\Users\Bemol\Documents\alcala\proyectosoccer\ClasificacionDePartidos\bin\Debug\netcoreapp3.1\ClasificacionDePartidos.runtimeconfig.json
+C:\Users\Bemol\Documents\alcala\proyectosoccer\ClasificacionDePartidos\bin\Debug\netcoreapp3.1\ClasificacionDePartidos.runtimeconfig.dev.json
+C:\Users\Bemol\Documents\alcala\proyectosoccer\ClasificacionDePartidos\bin\Debug\netcoreapp3.1\ClasificacionDePartidos.dll
+C:\Users\Bemol\Documents\alcala\proyectosoccer\ClasificacionDePartidos\bin\Debug\netcoreapp3.1\ClasificacionDePartidos.pdb
+C:\Users\Bemol\Documents\alcala\proyectosoccer\ClasificacionDePartidos\obj\Debug\netcoreapp3.1\ClasificacionDePartidos.csprojAssemblyReference.cache
+C:\Users\Bemol\Documents\alcala\proyectosoccer\ClasificacionDePartidos\obj\Debug\netcoreapp3.1\ClasificacionDePartidos.AssemblyInfoInputs.cache
+C:\Users\Bemol\Documents\alcala\proyectosoccer\ClasificacionDePartidos\obj\Debug\netcoreapp3.1\ClasificacionDePartidos.AssemblyInfo.cs
+C:\Users\Bemol\Documents\alcala\proyectosoccer\ClasificacionDePartidos\obj\Debug\netcoreapp3.1\ClasificacionDePartidos.csproj.CoreCompileInputs.cache
+C:\Users\Bemol\Documents\alcala\proyectosoccer\ClasificacionDePartidos\obj\Debug\netcoreapp3.1\ClasificacionDePartidos.dll
+C:\Users\Bemol\Documents\alcala\proyectosoccer\ClasificacionDePartidos\obj\Debug\netcoreapp3.1\ClasificacionDePartidos.pdb
+C:\Users\Bemol\Documents\alcala\proyectosoccer\ClasificacionDePartidos\obj\Debug\netcoreapp3.1\ClasificacionDePartidos.genruntimeconfig.cache
+C:\Users\Bemol\Documents\alcala\proyectosoccer\ClasificacionDePartidos\bin\Debug\netcoreapp3.1\LibreriaSoccer.dll
+C:\Users\Bemol\Documents\alcala\proyectosoccer\ClasificacionDePartidos\bin\Debug\netcoreapp3.1\LibreriaSoccer.pdb
+C:\Users\Bemol\Documents\alcala\proyectosoccer\ClasificacionDePartidos\obj\Debug\netcoreapp3.1\ClasificacionDePartidos.csproj.CopyComplete

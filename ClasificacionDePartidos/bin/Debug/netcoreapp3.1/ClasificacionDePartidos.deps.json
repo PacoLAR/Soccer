@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "ClasificacionDePartidos/1.0.0": {
+        "dependencies": {
+          "LibreriaSoccer": "1.0.0"
+        },
+        "runtime": {
+          "ClasificacionDePartidos.dll": {}
+        }
+      },
+      "LibreriaSoccer/1.0.0": {
+        "runtime": {
+          "LibreriaSoccer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ClasificacionDePartidos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibreriaSoccer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,9 @@
+C:\Users\Bemol\Documents\alcala\proyectosoccer\LibreriaSoccer\bin\Debug\netstandard2.0\LibreriaSoccer.deps.json
+C:\Users\Bemol\Documents\alcala\proyectosoccer\LibreriaSoccer\bin\Debug\netstandard2.0\LibreriaSoccer.dll
+C:\Users\Bemol\Documents\alcala\proyectosoccer\LibreriaSoccer\bin\Debug\netstandard2.0\LibreriaSoccer.pdb
+C:\Users\Bemol\Documents\alcala\proyectosoccer\LibreriaSoccer\obj\Debug\netstandard2.0\LibreriaSoccer.csprojAssemblyReference.cache
+C:\Users\Bemol\Documents\alcala\proyectosoccer\LibreriaSoccer\obj\Debug\netstandard2.0\LibreriaSoccer.AssemblyInfoInputs.cache
+C:\Users\Bemol\Documents\alcala\proyectosoccer\LibreriaSoccer\obj\Debug\netstandard2.0\LibreriaSoccer.AssemblyInfo.cs
+C:\Users\Bemol\Documents\alcala\proyectosoccer\LibreriaSoccer\obj\Debug\netstandard2.0\LibreriaSoccer.csproj.CoreCompileInputs.cache
+C:\Users\Bemol\Documents\alcala\proyectosoccer\LibreriaSoccer\obj\Debug\netstandard2.0\LibreriaSoccer.dll
+C:\Users\Bemol\Documents\alcala\proyectosoccer\LibreriaSoccer\obj\Debug\netstandard2.0\LibreriaSoccer.pdb

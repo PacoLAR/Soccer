@@ -31,20 +31,19 @@ namespace LibreriaSoccer{
                         partido.Visitant = equipovisitante;
                         partido.fecha = Convert.ToDateTime(fecha_formateada[1]);
                         Games.Add(partido);
-                        
-                        if(!Teams.Exists(equipo => equipo.Equipo == equipolocal.Equipo)){
-                            agregaPuntosAEquipo(equipolocal,equipovisitante,columnas[3],partido);
-                            Teams.Add(equipolocal);
-                        }
-                        else if(!Teams.Exists(equipo => equipo.Equipo == equipovisitante.Equipo)){
-                            Teams.Add(equipovisitante);
-                        }
-                        else{
-                            SoccerTeam encontrarequipolocal = Teams.Find(equipo => equipo.Equipo.Contains(nombreequipolocal));
-                            SoccerTeam encontrarequipovisitante = Teams.Find(equipo => equipo.Equipo.Contains(nombreequipovisitante));
-                            agregaPuntosAEquipo(encontrarequipolocal,encontrarequipovisitante,columnas[3],partido);
-                        }
+                        determinarPartido(columnas[3],partido);
+                       
                     }
+                   
+                    var nombres = (from game in Games  select  (game.Local.Equipo)).Distinct().ToList();
+                    foreach (var nombre in nombres)
+                    {
+                        llenarClasificacion(nombre);
+                    }
+
+                    clasificar();
+                    Teams.Reverse();
+                    
                 }catch (DirectoryNotFoundException ){
                     Console.WriteLine("No encontré el directorio");
                 }catch (FileNotFoundException ){
@@ -53,12 +52,7 @@ namespace LibreriaSoccer{
                 catch (IOException ){
                     Console.WriteLine("Error al leer el archivo");
                 }
-                clasificar();
-                Teams.Reverse();
-                foreach (var uno in Games)
-                {   
-                    Console.WriteLine(uno);
-                }
+                
                 return Teams;
             }else{
                 Console.WriteLine("Solo archivos con formato csv");
@@ -66,28 +60,46 @@ namespace LibreriaSoccer{
             }
             
         }
-        public void agregaPuntosAEquipo(SoccerTeam local, SoccerTeam visitante, string resultado,Game partido){
+
+        public void llenarClasificacion(string nombre){
+            List<Game> partidosjugados = (from game in Games where (game.Visitant.Equipo == nombre || game.Local.Equipo == nombre) select game).ToList();                   
+            var tiposresultados = partidosjugados.GroupBy(partido =>{
+                if(partido.Local.Equipo==nombre&&partido.FullTimeResult == ResultadosPartida.LocalWon){
+                    return "ganado";
+                }else if(partido.Visitant.Equipo==nombre&&partido.FullTimeResult == ResultadosPartida.VisitantWon){
+                    return "ganado";
+                }else{
+                    return "empatado";
+                }
+            });
+
+            SoccerTeam equipo = new SoccerTeam(nombre,0,0);
+            foreach (var resultadopartido in tiposresultados){
+                short partidos = Convert.ToInt16(resultadopartido.Count());
+                if(resultadopartido.Key == "ganado"){
+                    equipo.Puntos += Convert.ToInt16(partidos*3);
+                }else{
+                    equipo.Puntos += partidos;
+                }
+            }
+            Teams.Add(equipo);                   
+        }
+        public void determinarPartido(string resultado,Game partido){
             string [] golesAnotados = resultado.Split('-');
             short golesEquipoLocal = Convert.ToInt16(golesAnotados[0]);
             short golesEquipoVisitante = Convert.ToInt16(golesAnotados[1]);
-            local.GoalsScored +=golesEquipoLocal;
-            local.GoalsRecived +=golesEquipoVisitante;
-            visitante.GoalsScored += golesEquipoVisitante;
-            visitante.GoalsRecived += golesEquipoLocal;
+            
             if(golesEquipoLocal>golesEquipoVisitante){
-                local.Puntos +=3;
+             
                 partido.FullTimeResult = ResultadosPartida.LocalWon;
 
             }else if(golesEquipoLocal<golesEquipoVisitante){
-                visitante.Puntos +=3;
+               
                 partido.FullTimeResult = ResultadosPartida.VisitantWon;
             }else{
-                visitante.Puntos+=1;
-                local.Puntos+=1;
+               
                 partido.FullTimeResult = ResultadosPartida.Draw;
             }
-            
-
         }
         public Game GetGame(string VisitantTeam = "", string Localteam ="", DateTime Date= default(DateTime)){
             return null;

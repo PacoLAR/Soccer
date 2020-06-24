@@ -13,7 +13,7 @@ namespace ClasificacionDePartidos
             List<SoccerTeam> listaequipos = temporada.ReadSeasonFromFile("es.1.csv");           
             resultados.mostrarResultados(listaequipos);
             ITableResults nuevo = new CrearArchivoConTemporada();
-            nuevo.mostrarResultados(listaequipos);         
+            //nuevo.mostrarResultados(listaequipos);         
         }
     }
 }

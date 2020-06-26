@@ -6,15 +6,25 @@ using System.Text.RegularExpressions;
 
 namespace LibreriaSoccer{
     public class Season{
+
+        
+        public Season(ITableResults TableResults,string FileLocation){
+            this.TableResults = TableResults;
+            this.FileLocation = FileLocation;
+            
+        }
+
+        ITableResults TableResults{get;set;}
+        string FileLocation{get;set;}
         public List<SoccerTeam> Teams = new List<SoccerTeam>();
         public List<Game> Games = new List<Game>();
-        public  List<SoccerTeam> ReadSeasonFromFile(string rutaarchivo){
+        public  List<SoccerTeam> ReadSeasonFromFile(){
             string patron = ("\\.csv$");
             Regex  nuevo = new Regex(patron);
-            MatchCollection encontro = nuevo.Matches(rutaarchivo);                      
+            MatchCollection encontro = nuevo.Matches(FileLocation);                      
             if(encontro.Count>0){            
                 try{
-                    string [] lineas = File.ReadAllLines(rutaarchivo);            
+                    string [] lineas = File.ReadAllLines(FileLocation);            
                     foreach (string linea in lineas.Skip(1)){
                         string [] columnas = linea.Split(',');
                         string [] obtenernombrelocal = columnas[2].Split('(');
@@ -62,26 +72,13 @@ namespace LibreriaSoccer{
         }
 
         public void llenarClasificacion(string nombre){
-            List<Game> partidosjugados = (from game in Games where (game.Visitant.Equipo == nombre || game.Local.Equipo == nombre) select game).ToList();                   
-            var tiposresultados = partidosjugados.GroupBy(partido =>{
-                if(partido.Local.Equipo==nombre&&partido.FullTimeResult == ResultadosPartida.LocalWon){
-                    return "ganado";
-                }else if(partido.Visitant.Equipo==nombre&&partido.FullTimeResult == ResultadosPartida.VisitantWon){
-                    return "ganado";
-                }else{
-                    return "empatado";
-                }
-            });
+            
+            var puntos = Games.Sum(c=> (c.FullTimeResult == ResultadosPartida.LocalWon && c.Local.Equipo == nombre)?3
+                                    :(c.FullTimeResult == ResultadosPartida.VisitantWon && c.Visitant.Equipo == nombre)?3
+                                    :(c.FullTimeResult == ResultadosPartida.Draw && (c.Local.Equipo == nombre || c.Visitant.Equipo == nombre))?1:0);   
 
-            SoccerTeam equipo = new SoccerTeam(nombre,0,0);
-            foreach (var resultadopartido in tiposresultados){
-                short partidos = Convert.ToInt16(resultadopartido.Count());
-                if(resultadopartido.Key == "ganado"){
-                    equipo.Puntos += Convert.ToInt16(partidos*3);
-                }else{
-                    equipo.Puntos += partidos;
-                }
-            }
+            short puntosobtenidos = Convert.ToInt16(puntos);
+            SoccerTeam equipo = new SoccerTeam(nombre,0,puntosobtenidos);
             Teams.Add(equipo);                   
         }
         public void determinarPartido(string resultado,Game partido){
@@ -111,6 +108,10 @@ namespace LibreriaSoccer{
                 item.Clasificacion = contador;
                 contador--;
             }
+        }
+
+        public void resultados(){
+            TableResults.mostrarResultados(Teams);
         }
     }
     

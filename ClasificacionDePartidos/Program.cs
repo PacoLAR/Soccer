@@ -11,6 +11,7 @@ namespace ClasificacionDePartidos
             Console.WriteLine("Que pais quieres");
             string pais = Console.ReadLine();
             Season temporada = SeasonFactory.GetSeason(pais);
+            //temporada.Teams.Clear();
             temporada.resultados();
             Console.ReadKey();
                     

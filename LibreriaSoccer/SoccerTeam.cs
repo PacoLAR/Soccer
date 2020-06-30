@@ -9,9 +9,9 @@ namespace LibreriaSoccer{
         public int GoalsScored{get;set;}
         public int GoalsRecived{get;set;}
             
-        public SoccerTeam(string Equipo, short Clasificacion, short Puntos){
+        public SoccerTeam(string Equipo, short Puntos){
             this.Equipo = Equipo;
-            this.Clasificacion = Clasificacion;
+            
             this. Puntos = Puntos;
         }
 

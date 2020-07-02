@@ -104,7 +104,9 @@ namespace LibreriaSoccer{
         //Crear metodo de entrada linea
 
         public Game parseGame(string linea){
+        
             string [] sections = linea.Split(',');
+            if(sections.Length==6){
             List<SoccerTeam> teamsOfGame = getTeams(sections[2],sections[5]);
             DateTime date = formatTheDate(sections[1]);
             Game match = new Game();
@@ -113,6 +115,9 @@ namespace LibreriaSoccer{
             match.fecha = date;
             match.FullTimeResult = determinarPartido(sections[3]);
             return match;
+            }else{
+                return null;
+            }
         }
         public void saveGames(string [] listOfLines){
             Games = new List<Game>();

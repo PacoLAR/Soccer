@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TxXPVsigBBQB9kQRDFv57EgzzKZRWG6/7SeP8VMbMAwVgvbtCCrjdRjkgf2rYAB/aWABfEvlIEleTzU9OyxxnQ==",
+  "dgSpecHash": "HJE9DGNdnzXn0tsjmWxPMoyQdfZL06aSVspJXTy25CYyw+nqTyoFFhTpWBLqc8GL9qzp3V4RYHEwj6xbnQaUuA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccer\\LibreriaSoccer.csproj",
+  "projectFilePath": "c:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccer\\LibreriaSoccer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pacor\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\pacor\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

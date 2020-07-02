@@ -64,6 +64,7 @@ namespace LibreriaSoccer{
         
         public ResultadosPartida determinarPartido(string resultado){
             string [] golesAnotados = resultado.Split('-');
+            Console.WriteLine(golesAnotados[0].Length);
             short golesEquipoLocal = Convert.ToInt16(golesAnotados[0]);
             short golesEquipoVisitante = Convert.ToInt16(golesAnotados[1]);
             
@@ -100,18 +101,24 @@ namespace LibreriaSoccer{
             teamsOfGame.Add(teamVisitant);
             return teamsOfGame;
         }
+        //Crear metodo de entrada linea
+
+        public Game parseGame(string linea){
+            string [] sections = linea.Split(',');
+            List<SoccerTeam> teamsOfGame = getTeams(sections[2],sections[5]);
+            DateTime date = formatTheDate(sections[1]);
+            Game match = new Game();
+            match.Local = teamsOfGame.ElementAt(0);
+            match.Visitant = teamsOfGame.ElementAt(1);
+            match.fecha = date;
+            match.FullTimeResult = determinarPartido(sections[3]);
+            return match;
+        }
         public void saveGames(string [] listOfLines){
             Games = new List<Game>();
-            foreach (string linea in listOfLines.Skip(1)){
-                string [] sections = linea.Split(',');
-                List<SoccerTeam> teamsOfGame = getTeams(sections[2],sections[5]);
-                DateTime date = formatTheDate(sections[1]);
-                Game match = new Game();
-                match.Local = teamsOfGame.ElementAt(0);
-                match.Visitant = teamsOfGame.ElementAt(1);
-                match.fecha = date;
-                match.FullTimeResult = determinarPartido(sections[3]);
-                Games.Add(match);                      
+            foreach (string linea in listOfLines.Skip(1))
+            {               
+                Games.Add(parseGame(linea));                      
             }
             
         }

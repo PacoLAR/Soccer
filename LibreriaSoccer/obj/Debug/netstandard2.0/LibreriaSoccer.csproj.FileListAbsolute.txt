@@ -7,3 +7,12 @@ C:\Users\Bemol\Documents\alcala\proyectosoccer\LibreriaSoccer\obj\Debug\netstand
 C:\Users\Bemol\Documents\alcala\proyectosoccer\LibreriaSoccer\obj\Debug\netstandard2.0\LibreriaSoccer.csproj.CoreCompileInputs.cache
 C:\Users\Bemol\Documents\alcala\proyectosoccer\LibreriaSoccer\obj\Debug\netstandard2.0\LibreriaSoccer.dll
 C:\Users\Bemol\Documents\alcala\proyectosoccer\LibreriaSoccer\obj\Debug\netstandard2.0\LibreriaSoccer.pdb
+c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\LibreriaSoccer\bin\Debug\netstandard2.0\LibreriaSoccer.deps.json
+c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\LibreriaSoccer\bin\Debug\netstandard2.0\LibreriaSoccer.dll
+c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\LibreriaSoccer\bin\Debug\netstandard2.0\LibreriaSoccer.pdb
+c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\LibreriaSoccer\obj\Debug\netstandard2.0\LibreriaSoccer.csprojAssemblyReference.cache
+c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\LibreriaSoccer\obj\Debug\netstandard2.0\LibreriaSoccer.AssemblyInfoInputs.cache
+c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\LibreriaSoccer\obj\Debug\netstandard2.0\LibreriaSoccer.AssemblyInfo.cs
+c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\LibreriaSoccer\obj\Debug\netstandard2.0\LibreriaSoccer.csproj.CoreCompileInputs.cache
+c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\LibreriaSoccer\obj\Debug\netstandard2.0\LibreriaSoccer.dll
+c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\LibreriaSoccer\obj\Debug\netstandard2.0\LibreriaSoccer.pdb

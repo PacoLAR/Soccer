@@ -66,6 +66,17 @@ namespace LibreriaSoccer{
             return Teams;                              
         }
         public List<Game> GetGames(string localTeam =null,string visitantTeam=null,string date = null ){
+
+           
+            var listajuegos = from g in Games 
+                    //where g.Local.Equipo == localTeam || g.Visitant.Equipo == visitantTeam || g.fecha == Convert.ToDateTime(date)
+                    where (g.Local.Equipo == localTeam || String.IsNullOrEmpty(localTeam)
+                     && g.Visitant.Equipo == visitantTeam || String.IsNullOrEmpty(visitantTeam)
+                     && g.fecha == Convert.ToDateTime(date) || String.IsNullOrEmpty(date))
+                    select g;
+
+            return listajuegos.ToList();
+            /*
             DateTime Date;         
             if((!string.IsNullOrEmpty(localTeam)&&!string.IsNullOrEmpty(visitantTeam)&&!string.IsNullOrEmpty(date))){
                 Date = Convert.ToDateTime(date);
@@ -87,7 +98,7 @@ namespace LibreriaSoccer{
                 return Games.FindAll(game => game.fecha==Date);                
             }else{
                 return Games;
-            }
+            }*/
             
         }
         

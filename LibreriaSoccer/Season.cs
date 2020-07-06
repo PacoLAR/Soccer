@@ -29,8 +29,8 @@ namespace LibreriaSoccer{
             if(encontro.Count>0){            
                 try{
                     string [] lineas = File.ReadAllLines(FileLocation);
-                    saveGames(lineas);            
-                    llenarClasificacion();                    
+                    Games = saveGames(lineas);            
+                    Teams = llenarClasificacion(Games);                    
                 }catch (DirectoryNotFoundException ){
                     Console.WriteLine("No encontré el directorio");
                 }catch (FileNotFoundException ){
@@ -47,7 +47,7 @@ namespace LibreriaSoccer{
             
         }
 
-        public void llenarClasificacion(){
+        public List<SoccerTeam> llenarClasificacion(List<Game> Games){
             var nombres = (from game in Games  select  (game.Local.Equipo)).Distinct().ToList();
             foreach (var nombre in nombres)
             {
@@ -63,11 +63,7 @@ namespace LibreriaSoccer{
             Teams.Reverse();
             onUpdateGame();
             }
-            
-            
-            
-            
-                              
+            return Teams;                              
         }
         public List<Game> GetGames(string localTeam =null,string visitantTeam=null,string date = null ){
             DateTime Date;         
@@ -153,15 +149,15 @@ namespace LibreriaSoccer{
                 return null;
             }
         }
-        public void saveGames(string [] listOfLines){
+        public List<Game> saveGames(string [] listOfLines){
             Games = new List<Game>();
             foreach (string linea in listOfLines.Skip(1))
             {               
                 Game game = parseGame(linea);
                 Games.Add(game);
-                //onUpdateGame(linea);
+                
             }
-            
+            return Games;           
         }
         public static DateTime formatTheDate(string sectionDate){
                 string generalPattern= "\\s*\\([A-z0-9]+\\)\\s*";

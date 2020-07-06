@@ -12,9 +12,7 @@ namespace ClasificacionDePartidos
             string pais = Console.ReadLine();
             Season temporada = SeasonFactory.GetSeason(pais);
             temporada.resultados();
-            Console.ReadKey();
-            
-                    
+            Console.ReadKey();                    
         }
     }
 }

@@ -11,6 +11,8 @@ namespace LibreriaSoccer{
             this.FileLocation = FileLocation;
             Teams = new List<SoccerTeam>();
             Games = new List<Game>();
+            GameLive juego = new GameLive();
+            juego.updateGame += onUpdateGame;
             
         }
 
@@ -55,16 +57,46 @@ namespace LibreriaSoccer{
 
             short puntosobtenidos = Convert.ToInt16(puntos);
             SoccerTeam equipo = new SoccerTeam(nombre,puntosobtenidos);
-            Teams.Add(equipo); 
-            }
+            Teams.Add(equipo);
+            Console.WriteLine("*****************************************************");
             clasificar();
             Teams.Reverse();
+            onUpdateGame();
+            }
+            
+            
+            
+            
                               
+        }
+        public List<Game> GetGames(string localTeam =null,string visitantTeam=null,string date = null ){
+            DateTime Date;         
+            if((!string.IsNullOrEmpty(localTeam)&&!string.IsNullOrEmpty(visitantTeam)&&!string.IsNullOrEmpty(date))){
+                Date = Convert.ToDateTime(date);
+                return Games.FindAll(game => game.Local.Equipo==localTeam&&game.Visitant.Equipo==visitantTeam&&game.fecha==Date);
+            }else if((!string.IsNullOrEmpty(localTeam)&&!string.IsNullOrEmpty(visitantTeam))){
+                return Games.FindAll(game => game.Local.Equipo==localTeam&&game.Visitant.Equipo==visitantTeam);
+            }else if(!string.IsNullOrEmpty(localTeam)&&!string.IsNullOrEmpty(date)){
+                Date = Convert.ToDateTime(date);
+                return Games.FindAll(game => game.Local.Equipo==localTeam&&game.fecha==Date);
+            }else if(!string.IsNullOrEmpty(visitantTeam)&&!string.IsNullOrEmpty(date)){
+                Date = Convert.ToDateTime(date);
+                return Games.FindAll(game => game.Visitant.Equipo==visitantTeam&&game.fecha==Date);
+            }else if(!string.IsNullOrEmpty(localTeam)){
+                return Games.FindAll(Game=>Game.Local.Equipo == localTeam);
+            }else if(!string.IsNullOrEmpty(visitantTeam)){
+                return Games.FindAll(Game=>Game.Visitant.Equipo==visitantTeam);
+            }else if(!string.IsNullOrEmpty(date)){
+                Date = Convert.ToDateTime(date);
+                return Games.FindAll(game => game.fecha==Date);                
+            }else{
+                return Games;
+            }
+            
         }
         
         public ResultadosPartida determinarPartido(string resultado){
             string [] golesAnotados = resultado.Split('-');
-            Console.WriteLine(golesAnotados[0].Length);
             short golesEquipoLocal = Convert.ToInt16(golesAnotados[0]);
             short golesEquipoVisitante = Convert.ToInt16(golesAnotados[1]);
             
@@ -72,18 +104,20 @@ namespace LibreriaSoccer{
             :(golesEquipoLocal<golesEquipoVisitante)? ResultadosPartida.LocalWon
             :ResultadosPartida.Draw;
         }
-        public Game GetGame(string VisitantTeam = "", string Localteam ="", DateTime Date= default(DateTime)){
-            return null;
-        }
+        
         public void clasificar(){
             Teams.Sort();
             short contador = (short)Teams.Count;
             foreach (SoccerTeam item in Teams){
                 item.Clasificacion = contador;
                 contador--;
+                
             }
         }
 
+        public void onUpdateGame(){           
+            resultados();        
+        }
         public void resultados(){
             TableResults.mostrarResultados(Teams);
         }
@@ -101,7 +135,7 @@ namespace LibreriaSoccer{
             teamsOfGame.Add(teamVisitant);
             return teamsOfGame;
         }
-        //Crear metodo de entrada linea
+        
 
         public Game parseGame(string linea){
         
@@ -123,7 +157,9 @@ namespace LibreriaSoccer{
             Games = new List<Game>();
             foreach (string linea in listOfLines.Skip(1))
             {               
-                Games.Add(parseGame(linea));                      
+                Game game = parseGame(linea);
+                Games.Add(game);
+                //onUpdateGame(linea);
             }
             
         }

@@ -10,10 +10,7 @@ namespace LibreriaSoccer{
             this.TableResults = TableResults;
             this.FileLocation = FileLocation;
             Teams = new List<SoccerTeam>();
-            Games = new List<Game>();
-            GameLive juego = new GameLive();
-            juego.updateGame += onUpdateGame;
-            
+            Games = new List<Game>();           
         }
 
         ITableResults TableResults{get;set;}
@@ -57,49 +54,25 @@ namespace LibreriaSoccer{
 
             short puntosobtenidos = Convert.ToInt16(puntos);
             SoccerTeam equipo = new SoccerTeam(nombre,puntosobtenidos);
-            Teams.Add(equipo);
-            Console.WriteLine("*****************************************************");
+            if(!Teams.Exists(c => c.Equipo == equipo.Equipo)){
+                Teams.Add(equipo);
+            }else{
+                SoccerTeam nuevo= Teams.Find(c => c.Equipo == equipo.Equipo);
+                nuevo.Puntos = Convert.ToInt16(puntos);
+            }
             clasificar();
             Teams.Reverse();
-            onUpdateGame();
             }
             return Teams;                              
         }
         public List<Game> GetGames(string localTeam =null,string visitantTeam=null,string date = null ){
-
            
             var listajuegos = from g in Games 
-                    //where g.Local.Equipo == localTeam || g.Visitant.Equipo == visitantTeam || g.fecha == Convert.ToDateTime(date)
-                    where (g.Local.Equipo == localTeam || String.IsNullOrEmpty(localTeam)
-                     && g.Visitant.Equipo == visitantTeam || String.IsNullOrEmpty(visitantTeam)
-                     && g.fecha == Convert.ToDateTime(date) || String.IsNullOrEmpty(date))
+                    where ((g.Local.Equipo == localTeam || String.IsNullOrEmpty(localTeam))
+                     && (g.Visitant.Equipo == visitantTeam || String.IsNullOrEmpty(visitantTeam))
+                     && (g.fecha == Convert.ToDateTime(date) || String.IsNullOrEmpty(date)))
                     select g;
-
-            return listajuegos.ToList();
-            /*
-            DateTime Date;         
-            if((!string.IsNullOrEmpty(localTeam)&&!string.IsNullOrEmpty(visitantTeam)&&!string.IsNullOrEmpty(date))){
-                Date = Convert.ToDateTime(date);
-                return Games.FindAll(game => game.Local.Equipo==localTeam&&game.Visitant.Equipo==visitantTeam&&game.fecha==Date);
-            }else if((!string.IsNullOrEmpty(localTeam)&&!string.IsNullOrEmpty(visitantTeam))){
-                return Games.FindAll(game => game.Local.Equipo==localTeam&&game.Visitant.Equipo==visitantTeam);
-            }else if(!string.IsNullOrEmpty(localTeam)&&!string.IsNullOrEmpty(date)){
-                Date = Convert.ToDateTime(date);
-                return Games.FindAll(game => game.Local.Equipo==localTeam&&game.fecha==Date);
-            }else if(!string.IsNullOrEmpty(visitantTeam)&&!string.IsNullOrEmpty(date)){
-                Date = Convert.ToDateTime(date);
-                return Games.FindAll(game => game.Visitant.Equipo==visitantTeam&&game.fecha==Date);
-            }else if(!string.IsNullOrEmpty(localTeam)){
-                return Games.FindAll(Game=>Game.Local.Equipo == localTeam);
-            }else if(!string.IsNullOrEmpty(visitantTeam)){
-                return Games.FindAll(Game=>Game.Visitant.Equipo==visitantTeam);
-            }else if(!string.IsNullOrEmpty(date)){
-                Date = Convert.ToDateTime(date);
-                return Games.FindAll(game => game.fecha==Date);                
-            }else{
-                return Games;
-            }*/
-            
+            return listajuegos.ToList();            
         }
         
         public ResultadosPartida determinarPartido(string resultado){
@@ -108,7 +81,7 @@ namespace LibreriaSoccer{
             short golesEquipoVisitante = Convert.ToInt16(golesAnotados[1]);
             
             return  (golesEquipoLocal>golesEquipoVisitante) ?ResultadosPartida.LocalWon
-            :(golesEquipoLocal<golesEquipoVisitante)? ResultadosPartida.LocalWon
+            :(golesEquipoLocal<golesEquipoVisitante)? ResultadosPartida.VisitantWon
             :ResultadosPartida.Draw;
         }
         
@@ -122,8 +95,23 @@ namespace LibreriaSoccer{
             }
         }
 
-        public void onUpdateGame(){           
-            resultados();        
+        public void onUpdateGame(SoccerTeam local,SoccerTeam visitante,String Score){ 
+            List<Game> lista = GetGames(local.Equipo,visitante.Equipo,"07/07/2020 05:01:01 p. m.");
+            if(!Games.Exists(c=>c.Local.Equipo== local.Equipo && c.Visitant.Equipo == visitante.Equipo&&c.fecha==Convert.ToDateTime("07/07/2020 05:01:01 p. m."))){
+                Game nuevo = new Game();
+                nuevo.Local = local;
+                nuevo.Visitant = visitante;
+                nuevo.fecha = Convert.ToDateTime("07/07/2020 05:01:01 p. m.");
+                nuevo.FullTimeResult = determinarPartido(Score);
+               
+                Games.Add(nuevo);
+                
+                
+            }else{             
+                lista.ElementAt(0).FullTimeResult = determinarPartido(Score);
+            }
+            Teams = llenarClasificacion(Games);            
+            resultados();
         }
         public void resultados(){
             TableResults.mostrarResultados(Teams);

@@ -17,7 +17,8 @@ namespace LibreriaSoccerTest
             Season temporada = new Season(null,string.Empty);
             Game output = temporada.parseGame(line);
             Assert.IsType(typeof(Game),output);
-            Assert.StartsWith("?",line);            
+            Assert.StartsWith("?",line); 
+                     
         }
 
         [Theory]

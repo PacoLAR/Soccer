@@ -30,3 +30,4 @@ c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\ClasificacionDe
 c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\ClasificacionDePartidos\obj\Debug\netcoreapp3.1\ClasificacionDePartidos.dll
 c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\ClasificacionDePartidos\obj\Debug\netcoreapp3.1\ClasificacionDePartidos.pdb
 c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\ClasificacionDePartidos\obj\Debug\netcoreapp3.1\ClasificacionDePartidos.genruntimeconfig.cache
+C:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\ClasificacionDePartidos\bin\Debug\netcoreapp3.1\System.Text.Json.dll

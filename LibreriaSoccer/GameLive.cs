@@ -9,6 +9,7 @@ namespace LibreriaSoccer{
             this.Local = local;
             this.Visitant = visitante;
             PartidoJugandose = true;
+            
         }
         public delegate void updateGameHandler(SoccerTeam local, SoccerTeam visitante,string resultado);
         public event updateGameHandler updateGame;

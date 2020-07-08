@@ -9,9 +9,9 @@ namespace ClasificacionDePartidos
         static void Main(string[] args)
         {
             Console.WriteLine("Que pais quieres");
-            string pais = Console.ReadLine();
-            Season temporada = SeasonFactory.GetSeason(pais);
-            SoccerTeam local = new SoccerTeam("Tigres UANL",0);
+            //string pais = Console.ReadLine();
+            Season temporada = SeasonFactory.GetSeason("mexico");
+            /*SoccerTeam local = new SoccerTeam("Tigres UANL",0);
             SoccerTeam visitant = new SoccerTeam("Club Tijuana",0);
             GameLive gamelive = new GameLive(local,visitant);
             gamelive.updateGame+=temporada.onUpdateGame;
@@ -20,9 +20,11 @@ namespace ClasificacionDePartidos
             gamelive.LocalScore();
             gamelive.finishGame();
             gamelive.VisitantScore();
+            */
+            temporada.resultados();
             
             
-            Console.ReadKey();
+            //Console.ReadKey();
               
                             
         }

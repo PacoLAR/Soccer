@@ -2,7 +2,7 @@ using System;
 
 namespace LibreriaSoccer{
     public class SoccerTeam : IComparable<SoccerTeam>{
-
+        
         public string Equipo{get;set;}
         public short Clasificacion {get;set;}
         public short Puntos{get;set;}
@@ -12,6 +12,9 @@ namespace LibreriaSoccer{
         public SoccerTeam(string Equipo, short Puntos){
             this.Equipo = Equipo;            
             this. Puntos = Puntos;
+        }
+        private SoccerTeam(){
+            
         }
 
         

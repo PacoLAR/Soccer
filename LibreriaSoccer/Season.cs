@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace LibreriaSoccer{
     public class Season{  
@@ -164,6 +165,8 @@ namespace LibreriaSoccer{
                 string[]formatDate = result.Split(sectionDate);               
                 return Convert.ToDateTime(formatDate[1]);
         }
+        
     }
+    
     
 }

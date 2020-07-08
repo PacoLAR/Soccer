@@ -7,9 +7,10 @@ namespace LibreriaSoccer{
             string pais = country.ToUpper();
             
             if(pais=="MEXICO"){
-                ITableResults mexico = new TablaDeResultados();
+                ITableResults mexico = new TableResultsInXml();
                 temporada = new Season(mexico,"mx.1.csv");
                 temporada.ReadSeasonFromFile();
+                
                 
                 
             }else{

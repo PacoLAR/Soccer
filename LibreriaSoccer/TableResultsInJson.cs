@@ -4,6 +4,7 @@ using System.IO;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Text;
+using System;
 
 namespace LibreriaSoccer{
     public class TableResultsInJson : ITableResults
@@ -19,6 +20,7 @@ namespace LibreriaSoccer{
                     writer.Write(json);
                     writer.Close();
                 }
+                
                 
         }
     }

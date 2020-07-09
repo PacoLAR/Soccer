@@ -12,6 +12,7 @@ namespace LibreriaSoccer{
             foreach (SoccerTeam equipo in equipos){
                 Console.WriteLine(equipo);
             }
+            
         }
     }
 

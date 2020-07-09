@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fk21XSRkQeGWCKaTAQ4qatj0lQiW90ONMjTIPeIyRj5wFWoT79gyoYFdJ+wyb/aJ8KxH8seKyfYqMRiN0bcpzQ==",
+  "dgSpecHash": "DIMBSJJnvY8KpAo10BUKZxpC3BRLq5rkuDg2XklvySrvSQ8qONkMGUFzf9dxTij5cK+oaGOR86eDWRkGhcnGYQ==",
   "success": true,
   "projectFilePath": "c:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccerTest\\LibreriaSoccerTest.csproj",
   "expectedPackageFiles": [
@@ -40,6 +40,7 @@
     "C:\\Users\\pacor\\.nuget\\packages\\system.runtime.serialization.primitives\\4.1.1\\system.runtime.serialization.primitives.4.1.1.nupkg.sha512",
     "C:\\Users\\pacor\\.nuget\\packages\\system.text.encoding\\4.0.11\\system.text.encoding.4.0.11.nupkg.sha512",
     "C:\\Users\\pacor\\.nuget\\packages\\system.text.encoding.extensions\\4.0.11\\system.text.encoding.extensions.4.0.11.nupkg.sha512",
+    "C:\\Users\\pacor\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\pacor\\.nuget\\packages\\system.text.regularexpressions\\4.1.0\\system.text.regularexpressions.4.1.0.nupkg.sha512",
     "C:\\Users\\pacor\\.nuget\\packages\\system.threading\\4.0.11\\system.threading.4.0.11.nupkg.sha512",
     "C:\\Users\\pacor\\.nuget\\packages\\system.threading.tasks\\4.0.11\\system.threading.tasks.4.0.11.nupkg.sha512",

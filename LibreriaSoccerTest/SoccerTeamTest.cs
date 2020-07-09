@@ -29,5 +29,33 @@ namespace LibreriaSoccerTest
             Console.WriteLine(output);
             Assert.Equal(output,null);
         }
+        
+        [Theory]
+        [InlineData("1-0")]
+        [InlineData("5-1")]
+        public void determinarPartidoGanadoLocalTest(String resultado){
+            Season temporada = new Season(null,String.Empty);
+            ResultadosPartida resultadofinal =temporada.determinarPartido(resultado);
+            Assert.IsType(typeof(ResultadosPartida),resultadofinal);
+            Assert.Equal(resultadofinal,ResultadosPartida.LocalWon);
+        }
+        [Theory]
+        [InlineData("0-2")]
+        public void determinarPartidoGanadoVisitanteTest(String resultado){
+            Season temporada = new Season(null,String.Empty);
+            ResultadosPartida resultadofinal =temporada.determinarPartido(resultado);
+            Assert.IsType(typeof(ResultadosPartida),resultadofinal);
+            Assert.Equal(resultadofinal,ResultadosPartida.VisitantWon);
+        }
+        [Theory]
+        [InlineData("0-0")]
+        public void determinarPartidoEmpatadoTest(String resultado){
+            Season temporada = new Season(null,String.Empty);            
+            ResultadosPartida resultadofinal =temporada.determinarPartido(resultado);
+            Assert.IsType(typeof(ResultadosPartida),resultadofinal);
+            Assert.Equal(resultadofinal,ResultadosPartida.Draw);
+        }
+        
+
     }
 }

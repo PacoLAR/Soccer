@@ -20,15 +20,17 @@ namespace LibreriaSoccer{
         public List<Game> Games {get;private set;}
 
        
-        public  List<SoccerTeam> ReadSeasonFromFile(){
+        public async Task<List<SoccerTeam>> ReadSeasonFromFile(){
             string patron = ("\\.csv$");
             Regex  nuevo = new Regex(patron);
             MatchCollection encontro = nuevo.Matches(FileLocation);                      
             if(encontro.Count>0){            
                 try{
-                    string [] lineas = File.ReadAllLines(FileLocation);
+                   
+                    string [] lineas = await File.ReadAllLinesAsync(FileLocation);
+        
                     Games = saveGames(lineas);            
-                    Teams = llenarClasificacion(Games);                    
+                    Teams = llenarClasificacion(Games);                   
                 }catch (DirectoryNotFoundException ){
                     Console.WriteLine("No encontré el directorio");
                 }catch (FileNotFoundException ){
@@ -49,17 +51,17 @@ namespace LibreriaSoccer{
             var nombres = (from game in Games  select  (game.Local.Equipo)).Distinct().ToList();
             foreach (var nombre in nombres)
             {
-            var puntos = Games.Sum(c=> (c.FullTimeResult == ResultadosPartida.LocalWon && c.Local.Equipo == nombre)?3
+            short puntos = Convert.ToInt16(Games.Sum(c=> (c.FullTimeResult == ResultadosPartida.LocalWon && c.Local.Equipo == nombre)?3
                                 :(c.FullTimeResult == ResultadosPartida.VisitantWon && c.Visitant.Equipo == nombre)?3
-                                :(c.FullTimeResult == ResultadosPartida.Draw && (c.Local.Equipo == nombre || c.Visitant.Equipo == nombre))?1:0);   
+                                :(c.FullTimeResult == ResultadosPartida.Draw && (c.Local.Equipo == nombre || c.Visitant.Equipo == nombre))?1:0));   
 
-            short puntosobtenidos = Convert.ToInt16(puntos);
+            short puntosobtenidos = puntos;
             SoccerTeam equipo = new SoccerTeam(nombre,puntosobtenidos);
             if(!Teams.Exists(c => c.Equipo == equipo.Equipo)){
                 Teams.Add(equipo);
             }else{
-                SoccerTeam nuevo= Teams.Find(c => c.Equipo == equipo.Equipo);
-                nuevo.Puntos = Convert.ToInt16(puntos);
+                SoccerTeam equipoencontrado= Teams.Find(c => c.Equipo == equipo.Equipo);
+                equipoencontrado.Puntos = Convert.ToInt16(puntos);
             }
             clasificar();
             Teams.Reverse();
@@ -97,15 +99,16 @@ namespace LibreriaSoccer{
         }
 
         public void onUpdateGame(SoccerTeam local,SoccerTeam visitante,String Score){ 
+            
             List<Game> lista = GetGames(local.Equipo,visitante.Equipo,"07/07/2020 05:01:01 p. m.");
             if(!Games.Exists(c=>c.Local.Equipo== local.Equipo && c.Visitant.Equipo == visitante.Equipo&&c.fecha==Convert.ToDateTime("07/07/2020 05:01:01 p. m."))){
-                Game nuevo = new Game();
-                nuevo.Local = local;
-                nuevo.Visitant = visitante;
-                nuevo.fecha = Convert.ToDateTime("07/07/2020 05:01:01 p. m.");
-                nuevo.FullTimeResult = determinarPartido(Score);
+                Game nuevoJuego = new Game();
+                nuevoJuego.Local = local;
+                nuevoJuego.Visitant = visitante;
+                nuevoJuego.fecha = Convert.ToDateTime("07/07/2020 05:01:01 p. m.");
+                nuevoJuego.FullTimeResult = determinarPartido(Score);
                
-                Games.Add(nuevo);
+                Games.Add(nuevoJuego);
                 
                 
             }else{             
@@ -114,8 +117,10 @@ namespace LibreriaSoccer{
             Teams = llenarClasificacion(Games);            
             resultados();
         }
-        public void resultados(){
-            TableResults.mostrarResultados(Teams);
+        public void resultados()
+        {
+           
+           TableResults.mostrarResultados(Teams);
         }
         public static List<SoccerTeam> getTeams(string sectionNameLocal, string sectionNameVisitant){
 

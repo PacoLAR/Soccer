@@ -18,6 +18,7 @@ namespace LibreriaSoccer{
             }
 
             File.WriteAllLines("results.csv",valoresDeTabla);
+            
         }
     }
 

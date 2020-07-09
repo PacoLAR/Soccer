@@ -96,3 +96,4 @@ c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\LibreriaSoccerT
 c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\LibreriaSoccerTest\obj\Debug\netcoreapp3.1\LibreriaSoccerTest.dll
 c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\LibreriaSoccerTest\obj\Debug\netcoreapp3.1\LibreriaSoccerTest.pdb
 c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\LibreriaSoccerTest\obj\Debug\netcoreapp3.1\LibreriaSoccerTest.genruntimeconfig.cache
+c:\Users\pacor\Documents\Works\TRSF\Programacion\Projects\Soccer\LibreriaSoccerTest\bin\Debug\netcoreapp3.1\System.Text.Json.dll

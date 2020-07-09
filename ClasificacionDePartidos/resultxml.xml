@@ -3,126 +3,126 @@
   <SoccerTeam>
     <Equipo>Tigres UANL</Equipo>
     <Clasificacion>1</Clasificacion>
-    <Puntos>80</Puntos>
+    <Puntos>150</Puntos>
     <GoalsScored>0</GoalsScored>
     <GoalsRecived>0</GoalsRecived>
   </SoccerTeam>
   <SoccerTeam>
     <Equipo>Club Tijuana</Equipo>
     <Clasificacion>2</Clasificacion>
-    <Puntos>70</Puntos>
+    <Puntos>133</Puntos>
     <GoalsScored>0</GoalsScored>
     <GoalsRecived>0</GoalsRecived>
   </SoccerTeam>
   <SoccerTeam>
     <Equipo>CD Guadalajara Chivas</Equipo>
     <Clasificacion>3</Clasificacion>
-    <Puntos>65</Puntos>
+    <Puntos>122</Puntos>
     <GoalsScored>0</GoalsScored>
     <GoalsRecived>0</GoalsRecived>
   </SoccerTeam>
   <SoccerTeam>
     <Equipo>Club América</Equipo>
     <Clasificacion>4</Clasificacion>
-    <Puntos>62</Puntos>
+    <Puntos>117</Puntos>
     <GoalsScored>0</GoalsScored>
     <GoalsRecived>0</GoalsRecived>
   </SoccerTeam>
   <SoccerTeam>
     <Equipo>CF Pachuca</Equipo>
     <Clasificacion>5</Clasificacion>
-    <Puntos>56</Puntos>
+    <Puntos>108</Puntos>
     <GoalsScored>0</GoalsScored>
     <GoalsRecived>0</GoalsRecived>
   </SoccerTeam>
   <SoccerTeam>
     <Equipo>Deportivo Toluca FC</Equipo>
     <Clasificacion>6</Clasificacion>
-    <Puntos>56</Puntos>
+    <Puntos>104</Puntos>
     <GoalsScored>0</GoalsScored>
     <GoalsRecived>0</GoalsRecived>
   </SoccerTeam>
   <SoccerTeam>
     <Equipo>Club Necaxa</Equipo>
     <Clasificacion>7</Clasificacion>
-    <Puntos>52</Puntos>
+    <Puntos>103</Puntos>
     <GoalsScored>0</GoalsScored>
     <GoalsRecived>0</GoalsRecived>
   </SoccerTeam>
   <SoccerTeam>
     <Equipo>CF Monterrey</Equipo>
     <Clasificacion>8</Clasificacion>
-    <Puntos>52</Puntos>
+    <Puntos>91</Puntos>
     <GoalsScored>0</GoalsScored>
     <GoalsRecived>0</GoalsRecived>
   </SoccerTeam>
   <SoccerTeam>
     <Equipo>Club León</Equipo>
     <Clasificacion>9</Clasificacion>
-    <Puntos>49</Puntos>
-    <GoalsScored>0</GoalsScored>
-    <GoalsRecived>0</GoalsRecived>
-  </SoccerTeam>
-  <SoccerTeam>
-    <Equipo>Club Atlas</Equipo>
-    <Clasificacion>10</Clasificacion>
-    <Puntos>48</Puntos>
-    <GoalsScored>0</GoalsScored>
-    <GoalsRecived>0</GoalsRecived>
-  </SoccerTeam>
-  <SoccerTeam>
-    <Equipo>Monarcas Morelia</Equipo>
-    <Clasificacion>11</Clasificacion>
-    <Puntos>47</Puntos>
+    <Puntos>89</Puntos>
     <GoalsScored>0</GoalsScored>
     <GoalsRecived>0</GoalsRecived>
   </SoccerTeam>
   <SoccerTeam>
     <Equipo>Pumas UNAM</Equipo>
+    <Clasificacion>10</Clasificacion>
+    <Puntos>89</Puntos>
+    <GoalsScored>0</GoalsScored>
+    <GoalsRecived>0</GoalsRecived>
+  </SoccerTeam>
+  <SoccerTeam>
+    <Equipo>Club Atlas</Equipo>
+    <Clasificacion>11</Clasificacion>
+    <Puntos>89</Puntos>
+    <GoalsScored>0</GoalsScored>
+    <GoalsRecived>0</GoalsRecived>
+  </SoccerTeam>
+  <SoccerTeam>
+    <Equipo>Monarcas Morelia</Equipo>
     <Clasificacion>12</Clasificacion>
-    <Puntos>46</Puntos>
+    <Puntos>85</Puntos>
     <GoalsScored>0</GoalsScored>
     <GoalsRecived>0</GoalsRecived>
   </SoccerTeam>
   <SoccerTeam>
     <Equipo>Santos Laguna</Equipo>
     <Clasificacion>13</Clasificacion>
-    <Puntos>45</Puntos>
+    <Puntos>83</Puntos>
     <GoalsScored>0</GoalsScored>
     <GoalsRecived>0</GoalsRecived>
   </SoccerTeam>
   <SoccerTeam>
     <Equipo>Cruz Azul</Equipo>
     <Clasificacion>14</Clasificacion>
-    <Puntos>40</Puntos>
+    <Puntos>80</Puntos>
     <GoalsScored>0</GoalsScored>
     <GoalsRecived>0</GoalsRecived>
   </SoccerTeam>
   <SoccerTeam>
     <Equipo>Querétaro FC</Equipo>
     <Clasificacion>15</Clasificacion>
-    <Puntos>39</Puntos>
+    <Puntos>74</Puntos>
     <GoalsScored>0</GoalsScored>
     <GoalsRecived>0</GoalsRecived>
   </SoccerTeam>
   <SoccerTeam>
     <Equipo>Club Puebla</Equipo>
     <Clasificacion>16</Clasificacion>
-    <Puntos>36</Puntos>
+    <Puntos>72</Puntos>
     <GoalsScored>0</GoalsScored>
     <GoalsRecived>0</GoalsRecived>
   </SoccerTeam>
   <SoccerTeam>
     <Equipo>Tiburones Rojos Veracruz</Equipo>
     <Clasificacion>17</Clasificacion>
-    <Puntos>33</Puntos>
+    <Puntos>63</Puntos>
     <GoalsScored>0</GoalsScored>
     <GoalsRecived>0</GoalsRecived>
   </SoccerTeam>
   <SoccerTeam>
     <Equipo>Jaguares Chiapas</Equipo>
     <Clasificacion>18</Clasificacion>
-    <Puntos>28</Puntos>
+    <Puntos>54</Puntos>
     <GoalsScored>0</GoalsScored>
     <GoalsRecived>0</GoalsRecived>
   </SoccerTeam>

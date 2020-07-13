@@ -1,0 +1,26 @@
+@{
+    Layout = null;
+}
+@{
+List<String> list = ViewData["lineas"] as List<String>;
+}
+
+<!DOCTYPE html>
+<html>
+    <body>
+        <table>
+            <thead>
+                <tr><th>Round</th><th></th><th>team 1</th><th>FT</th><th>HT</th><th>Team 2</th></tr>
+            </thead>
+            
+            <tbody>
+            @foreach (string linea in list) {
+                <tr>
+                    <td>@linea</td>
+                </tr>
+            }
+            </tbody>
+           
+        </table>
+    </body>
+</html>

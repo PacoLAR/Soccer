@@ -46,6 +46,35 @@ namespace LibreriaSoccer{
             }
             
         }
+        public async Task<String[]> ReadSeasonFromFile(string FileLocation){
+            string patron = ("\\.csv$");
+            Regex  nuevo = new Regex(patron);
+           
+            MatchCollection encontro = nuevo.Matches(FileLocation);                      
+            if(encontro.Count>0){            
+                try{
+                   
+                    string [] lineas = await File.ReadAllLinesAsync(FileLocation);
+                    return lineas;
+                        
+                }catch (DirectoryNotFoundException ){
+                    Console.WriteLine("No encontré el directorio");
+                }catch (FileNotFoundException ){
+                    Console.WriteLine("No encontré el archivo");
+                }
+                catch (IOException ){
+                    Console.WriteLine("Error al leer el archivo");
+                }
+                return null;
+                
+                                                
+                
+            }else{
+                Console.WriteLine("Solo archivos con formato csv");
+                return null;
+            }
+            
+        }
 
         public List<SoccerTeam> llenarClasificacion(List<Game> Games){
             var nombres = (from game in Games  select  (game.Local.Equipo)).Distinct().ToList();

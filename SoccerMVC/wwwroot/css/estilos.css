@@ -1,0 +1,23 @@
+form{
+    margin-top: 10%;
+    max-width: 15cm;
+    padding: 3mm;
+    border: 2px cadetblue dashed;
+}
+.boton{
+    color: cadetblue;
+    background: transparent;
+    border: 2px solid cadetblue;
+    border-radius: 6px;
+}
+.boton:hover {
+    transition-duration: 0.8s;
+    background-color:cadetblue;
+    color: white;
+}
+
+  
+
+
+
+

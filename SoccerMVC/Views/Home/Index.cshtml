@@ -1,8 +1,33 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<head>
+<link href="~/css/estilos.css" rel="stylesheet"  type="text/css" />
+</head>
+<body>
+<div align="center">
+    <form method="POST" asp-action="TableOfSeason">
+        <div style="padding-bottom: 2mm;">
+            <input class="form-control" type="text" name="textNameUser" placeholder="name of user" style="color: cadetblue;"/>
+        </div>
+        <div style="padding-bottom: 2mm;">
+            <select class="form-control" >
+                <option value="" style="color: cadetblue;">Choose an option</option>
+                <option value="mexico" style="color: cadetblue;">Mexico</option>
+                <option value="england" style="color: cadetblue;">England</option>
+                <option value="spain" style="color: cadetblue;">Spain</option>
+            </select>
+        </div>
+       <div style="padding-bottom: 2mm;">
+             <input class="form-control" type="text" name="textYear" placeholder="year" style="color: cadetblue;" />
+        </div>
+        <div style="padding-bottom: 2mm;">
+        <input type ="submit" name="btnSubmit" value="Submit" class="boton" />
+        </div>
+    </form>
 </div>
+
+</body>
+
+

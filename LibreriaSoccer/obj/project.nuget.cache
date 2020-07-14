@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ddg9dPU6J/cjprGvndSk7QaKIKda3XuUilJV834CFXEnI3AvJjzpZkWZFVYNDGYI1oL0ABnEPbt3SmX9kndyZQ==",
+  "dgSpecHash": "I7ewJybcu85ZLOS07Aj0k3m/VPxvKgaIp4MvnnkE0MS9oOikVZsN6nfnk6cE83L3P1s/GgqrHBHC2LmI990VUQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccer\\LibreriaSoccer.csproj",
+  "projectFilePath": "c:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccer\\LibreriaSoccer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pacor\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512"
   ],

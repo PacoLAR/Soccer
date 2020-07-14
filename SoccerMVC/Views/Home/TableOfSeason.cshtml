@@ -1,22 +1,23 @@
+@model List<LibreriaSoccer.SoccerTeam>
 @{
     Layout = null;
 }
-@{
-List<String> list = ViewData["lineas"] as List<String>;
-}
+
 
 <!DOCTYPE html>
 <html>
     <body>
         <table>
             <thead>
-                <tr><th>Round</th><th></th><th>team 1</th><th>FT</th><th>HT</th><th>Team 2</th></tr>
+                <tr><th>Equipo</th><th>Puntos</th><th>Clasificación</th></tr>
             </thead>
             
             <tbody>
-            @foreach (string linea in list) {
+            @foreach (var linea in Model) {
                 <tr>
-                    <td>@linea</td>
+                    <th>@linea.Equipo</th>
+                    <th>@linea.Puntos</th>
+                    <th>@linea.Clasificacion</th>
                 </tr>
             }
             </tbody>

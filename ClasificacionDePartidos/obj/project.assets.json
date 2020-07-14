@@ -66,11 +66,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\ClasificacionDePartidos\\ClasificacionDePartidos.csproj",
+      "projectUniqueName": "c:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\ClasificacionDePartidos\\ClasificacionDePartidos.csproj",
       "projectName": "ClasificacionDePartidos",
-      "projectPath": "C:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\ClasificacionDePartidos\\ClasificacionDePartidos.csproj",
+      "projectPath": "c:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\ClasificacionDePartidos\\ClasificacionDePartidos.csproj",
       "packagesPath": "C:\\Users\\pacor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\ClasificacionDePartidos\\obj\\",
+      "outputPath": "c:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\ClasificacionDePartidos\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pacor\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -84,8 +84,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccer\\LibreriaSoccer.csproj": {
-              "projectPath": "C:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccer\\LibreriaSoccer.csproj"
+            "c:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccer\\LibreriaSoccer.csproj": {
+              "projectPath": "c:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccer\\LibreriaSoccer.csproj"
             }
           }
         }

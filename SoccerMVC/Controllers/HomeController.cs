@@ -27,21 +27,11 @@ namespace SoccerMVC.Controllers
         }
         
         [HttpPost]
-        public async Task<IActionResult> TableOfSeason(String name,string country, string year){
-            Console.WriteLine($"{name}{country}{year}");
-            if(country == "MEXICO"){
-                country = "mx.1.csv";
-            }else if(country == "ENGLAND"){
-                country = "eng.1.csv";
-            }else{
-                country= "es.1.csv";
-            }
-            Season temporada = new Season(null,country);
-            String[]lineas = await temporada.ReadSeasonFromFile(country);
-          
-            ViewData["lineas"]= lineas.ToList();
+        public async Task<IActionResult> TableOfSeason(String textNameUser,string country, string textYear){
             
-            return View();
+            Season temporada =  await SeasonFactory.GetSeasonAsync(country);
+            
+            return View("TableOfSeason",temporada.Teams);
         }
         /*
         public IActionResult Privacy()

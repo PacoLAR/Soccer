@@ -46,46 +46,27 @@ namespace LibreriaSoccer{
             }
             
         }
-        public async Task<String[]> ReadSeasonFromFile(string FileLocation){
-            string patron = ("\\.csv$");
-            Regex  nuevo = new Regex(patron);
-           
-            MatchCollection encontro = nuevo.Matches(FileLocation);                      
-            if(encontro.Count>0){            
-                try{
-                   
-                    string [] lineas = await File.ReadAllLinesAsync(FileLocation);
-                    return lineas;
-                        
-                }catch (DirectoryNotFoundException ){
-                    Console.WriteLine("No encontré el directorio");
-                }catch (FileNotFoundException ){
-                    Console.WriteLine("No encontré el archivo");
-                }
-                catch (IOException ){
-                    Console.WriteLine("Error al leer el archivo");
-                }
-                return null;
-                
-                                                
-                
-            }else{
-                Console.WriteLine("Solo archivos con formato csv");
-                return null;
-            }
-            
-        }
-
+        
         public List<SoccerTeam> llenarClasificacion(List<Game> Games){
             var nombres = (from game in Games  select  (game.Local.Equipo)).Distinct().ToList();
             foreach (var nombre in nombres)
             {
             short puntos = Convert.ToInt16(Games.Sum(c=> (c.FullTimeResult == ResultadosPartida.LocalWon && c.Local.Equipo == nombre)?3
                                 :(c.FullTimeResult == ResultadosPartida.VisitantWon && c.Visitant.Equipo == nombre)?3
-                                :(c.FullTimeResult == ResultadosPartida.Draw && (c.Local.Equipo == nombre || c.Visitant.Equipo == nombre))?1:0));   
+                                :(c.FullTimeResult == ResultadosPartida.Draw && (c.Local.Equipo == nombre || c.Visitant.Equipo == nombre))?1:0));
 
-            short puntosobtenidos = puntos;
-            SoccerTeam equipo = new SoccerTeam(nombre,puntosobtenidos);
+            int golesMarcados = Games.Sum(c =>(c.Local.Equipo == nombre)? c.GoalsLocal
+                                :(c.Visitant.Equipo ==nombre)? c.GoalsVisitant
+                                :0);
+
+            int golesRecibidos = Games.Sum(c =>(c.Local.Equipo == nombre)? c.GoalsVisitant
+                                :(c.Visitant.Equipo ==nombre)? c.GoalsVisitant
+                                :0);                     
+
+            
+            SoccerTeam equipo = new SoccerTeam(nombre,puntos);
+            equipo.GoalsScored = golesMarcados;
+            equipo.GoalsRecived = golesRecibidos;
             if(!Teams.Exists(c => c.Equipo == equipo.Equipo)){
                 Teams.Add(equipo);
             }else{
@@ -107,15 +88,19 @@ namespace LibreriaSoccer{
             return listajuegos.ToList();            
         }
         
-        public ResultadosPartida determinarPartido(string resultado){
+        public ResultadosPartida determinarPartido(string resultado,Game partido){
             string [] golesAnotados = resultado.Split('-');
             short golesEquipoLocal = Convert.ToInt16(golesAnotados[0]);
             short golesEquipoVisitante = Convert.ToInt16(golesAnotados[1]);
+            partido.GoalsLocal = golesEquipoLocal;
+            partido.GoalsVisitant = golesEquipoVisitante;
             
             return  (golesEquipoLocal>golesEquipoVisitante) ?ResultadosPartida.LocalWon
             :(golesEquipoLocal<golesEquipoVisitante)? ResultadosPartida.VisitantWon
             :ResultadosPartida.Draw;
+            
         }
+        
         
         public void clasificar(){
             Teams.Sort();
@@ -135,13 +120,13 @@ namespace LibreriaSoccer{
                 nuevoJuego.Local = local;
                 nuevoJuego.Visitant = visitante;
                 nuevoJuego.fecha = Convert.ToDateTime("07/07/2020 05:01:01 p. m.");
-                nuevoJuego.FullTimeResult = determinarPartido(Score);
+                nuevoJuego.FullTimeResult = determinarPartido(Score,nuevoJuego);
                
                 Games.Add(nuevoJuego);
                 
                 
             }else{             
-                lista.ElementAt(0).FullTimeResult = determinarPartido(Score);
+                lista.ElementAt(0).FullTimeResult = determinarPartido(Score,lista.ElementAt(0));
             }
             Teams = llenarClasificacion(Games);            
             resultados();
@@ -177,7 +162,7 @@ namespace LibreriaSoccer{
             match.Local = teamsOfGame.ElementAt(0);
             match.Visitant = teamsOfGame.ElementAt(1);
             match.fecha = date;
-            match.FullTimeResult = determinarPartido(sections[3]);
+            match.FullTimeResult = determinarPartido(sections[3],match);
             return match;
             }else{
                 return null;

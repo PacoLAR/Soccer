@@ -35,7 +35,7 @@ namespace LibreriaSoccerTest
         [InlineData("5-1")]
         public void determinarPartidoGanadoLocalTest(String resultado){
             Season temporada = new Season(null,String.Empty);
-            ResultadosPartida resultadofinal =temporada.determinarPartido(resultado);
+            ResultadosPartida resultadofinal =temporada.determinarPartido(resultado,null);
             Assert.IsType(typeof(ResultadosPartida),resultadofinal);
             Assert.Equal(resultadofinal,ResultadosPartida.LocalWon);
         }
@@ -43,7 +43,7 @@ namespace LibreriaSoccerTest
         [InlineData("0-2")]
         public void determinarPartidoGanadoVisitanteTest(String resultado){
             Season temporada = new Season(null,String.Empty);
-            ResultadosPartida resultadofinal =temporada.determinarPartido(resultado);
+            ResultadosPartida resultadofinal =temporada.determinarPartido(resultado,null);
             Assert.IsType(typeof(ResultadosPartida),resultadofinal);
             Assert.Equal(resultadofinal,ResultadosPartida.VisitantWon);
         }
@@ -51,7 +51,7 @@ namespace LibreriaSoccerTest
         [InlineData("0-0")]
         public void determinarPartidoEmpatadoTest(String resultado){
             Season temporada = new Season(null,String.Empty);            
-            ResultadosPartida resultadofinal =temporada.determinarPartido(resultado);
+            ResultadosPartida resultadofinal =temporada.determinarPartido(resultado,null);
             Assert.IsType(typeof(ResultadosPartida),resultadofinal);
             Assert.Equal(resultadofinal,ResultadosPartida.Draw);
         }

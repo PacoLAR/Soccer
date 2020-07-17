@@ -3555,31 +3555,38 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pacor\\.nuget\\packages\\": {}
+    "C:\\Users\\pacor\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccerTest\\LibreriaSoccerTest.csproj",
+      "projectUniqueName": "C:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccerTest\\LibreriaSoccerTest.csproj",
       "projectName": "LibreriaSoccerTest",
-      "projectPath": "c:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccerTest\\LibreriaSoccerTest.csproj",
+      "projectPath": "C:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccerTest\\LibreriaSoccerTest.csproj",
       "packagesPath": "C:\\Users\\pacor\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccerTest\\obj\\",
+      "outputPath": "C:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccerTest\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\pacor\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\pacor\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "c:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccer\\LibreriaSoccer.csproj": {
-              "projectPath": "c:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccer\\LibreriaSoccer.csproj"
+            "C:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccer\\LibreriaSoccer.csproj": {
+              "projectPath": "C:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccer\\LibreriaSoccer.csproj"
             }
           }
         }
@@ -3625,7 +3632,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

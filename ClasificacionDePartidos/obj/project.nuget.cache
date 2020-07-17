@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3iS0R5itBZzrW/xVWafd8dtpZBbfQuyDABCwY0fxl9ISny0iYDJ6KK/FtUVNOZsyQTiqXEN2eiCoxXN6EjFw2w==",
+  "dgSpecHash": "z8vH+QrUICUIkDg5fQVn6mOL577edkZWDCZDhrFBQ1wGzV7cgdvQvw8bOzqCL5ONvFKi0I9zdreP5tEapK/0BA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\ClasificacionDePartidos\\ClasificacionDePartidos.csproj",
+  "projectFilePath": "C:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\ClasificacionDePartidos\\ClasificacionDePartidos.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pacor\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512"
   ],

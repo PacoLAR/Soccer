@@ -73,17 +73,21 @@ namespace LibreriaSoccer{
                 SoccerTeam equipoencontrado= Teams.Find(c => c.Equipo == equipo.Equipo);
                 equipoencontrado.Puntos = Convert.ToInt16(puntos);
             }
+            
+            }
             clasificar();
             Teams.Reverse();
-            }
             return Teams;                              
         }
         public List<Game> GetGames(string localTeam =null,string visitantTeam=null,string date = null ){
            
+
+            
             var listajuegos = from g in Games 
+                    
                     where ((g.Local.Equipo == localTeam || String.IsNullOrEmpty(localTeam))
                      && (g.Visitant.Equipo == visitantTeam || String.IsNullOrEmpty(visitantTeam))
-                     && (g.fecha == Convert.ToDateTime(date) || String.IsNullOrEmpty(date)))
+                     && (g.fecha.ToString("dd-MM-yyyy") == date || String.IsNullOrEmpty(date)))
                     select g;
             return listajuegos.ToList();            
         }
@@ -113,19 +117,20 @@ namespace LibreriaSoccer{
         }
 
         public void onUpdateGame(SoccerTeam local,SoccerTeam visitante,String Score){ 
-            
-            List<Game> lista = GetGames(local.Equipo,visitante.Equipo,"07/07/2020 05:01:01 p. m.");
-            if(!Games.Exists(c=>c.Local.Equipo== local.Equipo && c.Visitant.Equipo == visitante.Equipo&&c.fecha==Convert.ToDateTime("07/07/2020 05:01:01 p. m."))){
+            List<Game> lista = GetGames(local.Equipo,visitante.Equipo,DateTime.Today.ToString("dd-MM-yyyy"));
+          
+            if(lista.Count==0){
                 Game nuevoJuego = new Game();
                 nuevoJuego.Local = local;
                 nuevoJuego.Visitant = visitante;
-                nuevoJuego.fecha = Convert.ToDateTime("07/07/2020 05:01:01 p. m.");
+                nuevoJuego.fecha = Convert.ToDateTime(DateTime.Today);
                 nuevoJuego.FullTimeResult = determinarPartido(Score,nuevoJuego);
                
                 Games.Add(nuevoJuego);
                 
                 
-            }else{             
+            }else{
+                Console.WriteLine(lista.Count);           
                 lista.ElementAt(0).FullTimeResult = determinarPartido(Score,lista.ElementAt(0));
             }
             Teams = llenarClasificacion(Games);            

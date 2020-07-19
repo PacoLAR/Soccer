@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jEnUjQCG0BAR6j4q4jt9Q3l3VbFc2YThaFHAaKl6ooJOUM1YoN6OoBS+a4HkUqQdXNxZxLpRMBi3T8zg30Mtmg==",
+  "dgSpecHash": "VjoOpR60NybzufeSrmAIEasMYE9kVxlQda2CL30GHqqt1MZHlj40DKzGs3XpoAChGB7ZR4I6JwvCR8xx3UecRQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccerTest\\LibreriaSoccerTest.csproj",
+  "projectFilePath": "c:\\Users\\pacor\\Documents\\Works\\TRSF\\Programacion\\Projects\\Soccer\\LibreriaSoccerTest\\LibreriaSoccerTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pacor\\.nuget\\packages\\coverlet.collector\\1.2.0\\coverlet.collector.1.2.0.nupkg.sha512",
     "C:\\Users\\pacor\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",

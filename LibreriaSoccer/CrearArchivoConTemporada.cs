@@ -17,7 +17,7 @@ namespace LibreriaSoccer{
                 valoresDeTabla.Add(linea_de_equipo);                
             }
 
-            File.WriteAllLines("results.csv",valoresDeTabla);
+            File.WriteAllLinesAsync("results.csv",valoresDeTabla);
             
         }
     }
